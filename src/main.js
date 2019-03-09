@@ -14,9 +14,12 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.component('Nav', Nav)
 
+// ***************************** >>>>  IMPORTANT! You must update these settings. <<<<< ********************
 // Change these URLs to match your deployment API Gateway URL and S3 bucket! (NOTE NO TRAILING SLASH)
-Vue.prototype.$API = 'https://jd1wwyl3n9.execute-api.us-east-1.amazonaws.com/dev'
-Vue.prototype.$PHOTOS_URL = 'https://facematcher.jbes.dev/enroll'
+
+Vue.prototype.$API = 'https://a123456789.execute-api.us-east-1.amazonaws.com/dev'
+Vue.prototype.$PHOTOS_URL = 'https://<<YOUR S3 BUCKET URL>>/enroll'
+// ***************************** >>>>  IMPORTANT! You must update these settings. <<<<< ********************
 
 // The photos URL format is:
 // - For an S3 bucket: 'https://s3.amazonaws.com/BUCKET_NAME/enroll'
