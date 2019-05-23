@@ -3,14 +3,14 @@
     <video class="player" ref="player" id="player" autoplay playsinline></video>
     <canvas ref="canvas" id="canvas" class="canvas"></canvas>
 
-     <b-card title="Enroll member" bg-variant="primary light fixed-bottom" text-variant="white" class="text-center">
+     <b-card title="Save New Person" bg-variant="primary light fixed-bottom" text-variant="white" class="text-center">
       <div class="innerBox d-flex justify-content-center flex-column">
         <div :disabled="isSending">
           <b-button :to="{ name: 'home'}" size="lg" :disabled="isSending" variant="secondary">Cancel</b-button>
           <b-button size="lg" :disabled="isSending" variant="success" @click="sendPhoto">{{ sendButtonText }}</b-button>
         </div>
       </div>
-      <b-modal centered cancel-disabled no-close-on-esc no-close-on-backdrop header-text-variant="primary" body-text-variant="primary" v-model="modalShow" id="modal" size="sm" title="Face Matcher">
+      <b-modal centered cancel-disabled no-close-on-esc no-close-on-backdrop header-text-variant="primary" body-text-variant="primary" v-model="modalShow" id="modal" size="sm" title="Face Recognition Result">
         {{ modalText }}
         <div slot="modal-footer" class="w-100">
           <b-button size="sm" class="float-right" variant="primary" @click="cleanUp">Close</b-button>
@@ -34,8 +34,8 @@ export default {
       modalText: '',
       modalShow: false,
       resultText: {
-        'INDEXED': 'Success! You are enrolled.',
-        'EXISTING': 'You are already enrolled.',
+        'INDEXED': 'Success! We have saved this person as your known.',
+        'EXISTING': 'This Person is already know to you.',
         'NO_FACES': 'There is no face in this photo.'
       }
     }

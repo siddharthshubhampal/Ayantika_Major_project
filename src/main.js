@@ -17,8 +17,8 @@ Vue.component('Nav', Nav)
 // ***************************** >>>>  IMPORTANT! You must update these settings. <<<<< ********************
 // Change these URLs to match your deployment API Gateway URL and S3 bucket! (NOTE NO TRAILING SLASH)
 
-Vue.prototype.$API = 'https://a123456789.execute-api.us-east-1.amazonaws.com/dev'
-Vue.prototype.$PHOTOS_URL = 'https://<<YOUR S3 BUCKET URL>>/enroll'
+Vue.prototype.$API = 'https://jd1wwyl3n9.execute-api.us-east-1.amazonaws.com/dev'
+Vue.prototype.$PHOTOS_URL = 'https://s3.amazonaws.com/askjames-facematcher/enroll'
 // ***************************** >>>>  IMPORTANT! You must update these settings. <<<<< ********************
 
 // The photos URL format is:

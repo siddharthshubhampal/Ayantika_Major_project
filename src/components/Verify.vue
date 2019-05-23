@@ -3,14 +3,14 @@
     <video class="player" ref="player" id="player" autoplay playsinline></video>
     <canvas ref="canvas" id="canvas" class="canvas"></canvas>
 
-     <b-card title="Verify member" bg-variant="primary light fixed-bottom" text-variant="white" class="text-center">
+     <b-card title="Check Person's Identity" bg-variant="primary light fixed-bottom" text-variant="white" class="text-center">
       <div class="innerBox d-flex justify-content-center flex-column">
         <div :disabled="isSending">
           <b-button :to="{ name: 'home'}" size="lg" :disabled="isSending" variant="secondary">Cancel</b-button>
           <b-button size="lg" :disabled="isSending" variant="success" @click="sendPhoto">{{ sendButtonText }}</b-button>
         </div>
       </div>
-      <b-modal centered cancel-disabled no-close-on-esc no-close-on-backdrop hide-header-close header-text-variant="primary" body-text-variant="primary" v-model="modalShow" id="modal" size="sm" title="Face Matcher">
+      <b-modal centered cancel-disabled no-close-on-esc no-close-on-backdrop hide-header-close header-text-variant="primary" body-text-variant="primary" v-model="modalShow" id="modal" size="sm" title="Face Recognition Major Project">
         {{ modalText }}
         <b-img :disabled="showMemberPhoto" :src=memberPhoto fluid />
         <div slot="modal-footer" class="w-100">
@@ -104,12 +104,12 @@ export default {
         case 'MATCH':
           console.log(status.data)
           const memberPhoto = status.data.rekognition.FaceMatches[0].Face.ExternalImageId
-          this.modalText = 'Success! You are a member. This is your original member photo:'
+          this.modalText = 'Success! This person is known to you and Here is the image you have used previously'
           this.memberPhoto = `${this.$PHOTOS_URL}/${memberPhoto}`
           this.showMemberPhoto = true
           break
         case 'NO_MATCH':
-          this.modalText = 'You are NOT a member.'
+          this.modalText = 'This is a new person to you.'
           break
         case 'NO_FACES':
           this.modalText = 'There is no face in this photo.'

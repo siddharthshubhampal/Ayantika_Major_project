@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="primary fixed-top">
-    <b-navbar-brand href="#">James' Club - Member Checker</b-navbar-brand>
+    <b-navbar-brand href="#">Major Project</b-navbar-brand>
     <b-navbar-toggle target="nav_collapse" />
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
